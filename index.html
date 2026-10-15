@@ -1,0 +1,330 @@
+<title>CETverse Privacy Policy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Layout: a single reading column with a sticky left-hand section index on
+    wide screens, collapsing to a top index on phones — a reference document
+    you navigate, not scroll through blind.
+  */
+  :root{
+    --bg:#f6f4ef;
+    --surface:#ffffff;
+    --border:#e2ddd0;
+    --fg:#211f2c;
+    --fg-muted:#5c5870;
+    --accent:#3c3f8f;
+    --accent-soft:#e9e8f7;
+    --flag:#9a5b17;
+    --flag-soft:#fbefdf;
+
+    --font-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-body:"Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#17151f;
+      --surface:#201e2b;
+      --border:#36334a;
+      --fg:#ecebf5;
+      --fg-muted:#a6a2bf;
+      --accent:#a6acff;
+      --accent-soft:#2a2a4a;
+      --flag:#e3a862;
+      --flag-soft:#3a2c17;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#17151f;
+    --surface:#201e2b;
+    --border:#36334a;
+    --fg:#ecebf5;
+    --fg-muted:#a6a2bf;
+    --accent:#a6acff;
+    --accent-soft:#2a2a4a;
+    --flag:#e3a862;
+    --flag-soft:#3a2c17;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    padding-left:max(16px, env(safe-area-inset-left, 0px));
+    padding-right:max(16px, env(safe-area-inset-right, 0px));
+  }
+  a{color:var(--accent)}
+  h1,h2,h3{font-family:var(--font-display); text-wrap:balance; color:var(--fg)}
+
+  .shell{
+    max-width:1080px;
+    margin:0 auto;
+    padding-block:40px 64px;
+    display:grid;
+    grid-template-columns:240px minmax(0,1fr);
+    gap:48px;
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr; gap:24px}
+  }
+
+  /* ---- masthead ---- */
+  .masthead{grid-column:1 / -1}
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 10px;
+  }
+  .masthead h1{font-size:clamp(28px,4.2vw,42px); font-weight:700; margin:0 0 10px; line-height:1.12}
+  .masthead p{color:var(--fg-muted); margin:0; font-size:16.5px; max-width:62ch}
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:20px;
+    font-size:13.5px; color:var(--fg-muted);
+  }
+  .meta-row strong{color:var(--fg); font-weight:600}
+
+  /* ---- index (nav) ---- */
+  nav.index{position:sticky; top:max(24px, env(safe-area-inset-top, 0px)); align-self:start}
+  nav.index h2{
+    font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--fg-muted); margin:0 0 12px;
+  }
+  nav.index ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px}
+  nav.index a{
+    display:block; padding:7px 10px; border-radius:8px; color:var(--fg-muted);
+    text-decoration:none; font-size:14px; line-height:1.3;
+  }
+  nav.index a:hover{background:var(--accent-soft); color:var(--accent)}
+  @media (max-width:860px){
+    nav.index{position:static}
+    nav.index ol{flex-direction:row; flex-wrap:wrap; gap:6px}
+    nav.index a{background:var(--surface); border:1px solid var(--border); padding:6px 12px}
+  }
+
+  /* ---- main column ---- */
+  main{min-width:0}
+  .callout{
+    background:var(--flag-soft); border:1px solid color-mix(in srgb, var(--flag) 35%, var(--border));
+    border-radius:12px; padding:16px 18px; margin:0 0 36px;
+    font-size:14.5px; color:var(--fg);
+  }
+  .callout strong{color:var(--flag)}
+
+  section{margin-bottom:40px; scroll-margin-top:24px}
+  section h2{
+    font-size:22px; font-weight:600; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:10px;
+  }
+  section h2 .num{
+    font-family:var(--font-body); font-size:13px; font-weight:700;
+    color:var(--accent); background:var(--accent-soft);
+    border-radius:999px; padding:3px 9px; flex:none;
+  }
+  section > p, section > ul{color:var(--fg); max-width:72ch}
+  section p{margin:0 0 14px}
+  section ul{margin:0 0 14px; padding-left:22px}
+  section li{margin-bottom:8px}
+  section li::marker{color:var(--accent)}
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:20px 22px; margin:14px 0 18px;
+  }
+  table.data-table{width:100%; border-collapse:collapse; font-size:14.5px; margin:14px 0 18px}
+  table.data-table th,table.data-table td{
+    text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top;
+  }
+  table.data-table th{font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--fg-muted); font-weight:600}
+  .table-wrap{overflow-x:auto}
+
+  .contact-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:28px; display:flex; flex-direction:column; gap:6px;
+  }
+  .contact-card .label{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-muted)}
+  .contact-card .value{font-size:16px; font-weight:600}
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px 28px}
+
+  footer{
+    grid-column:1 / -1; border-top:1px solid var(--border); padding-top:20px; margin-top:8px;
+    color:var(--fg-muted); font-size:13px;
+  }
+</style>
+
+<div class="shell">
+  <div class="masthead">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>How CETverse handles your data</h1>
+    <p>CETverse is an MHT-CET exam-preparation app. This page explains what we collect from students who use it, why, who we share it with, and how to have it deleted.</p>
+    <div class="meta-row">
+      <span><strong>Last updated</strong> &nbsp;October 15, 2026</span>
+      <span><strong>Applies to</strong> &nbsp;the CETverse Android app and its companion website</span>
+      <span><strong>Contact</strong> &nbsp;cetverse@gmail.com</span>
+    </div>
+  </div>
+
+  <nav class="index" aria-label="Sections">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#overview">1. Overview</a></li>
+      <li><a href="#collect">2. Information we collect</a></li>
+      <li><a href="#use">3. How we use it</a></li>
+      <li><a href="#share">4. Who we share it with</a></li>
+      <li><a href="#retention">5. How long we keep it</a></li>
+      <li><a href="#rights">6. Your rights &amp; deleting your account</a></li>
+      <li><a href="#children">7. Children's privacy</a></li>
+      <li><a href="#security">8. Security</a></li>
+      <li><a href="#changes">9. Changes to this policy</a></li>
+      <li><a href="#contact">10. Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2><span class="num">1</span> Overview</h2>
+      <p>CETverse is built and operated by Rushikesh Ramesh Gholve, trading as CETverse, based in Maharashtra, India ("CETverse", "we", "us"). We provide previous-year question papers, chapter-wise mock tests, performance tracking, and a student leaderboard for MHT-CET aspirants.</p>
+      <p>This policy covers the personal data the app and its backend services collect when you create an account, take a test, or make a purchase. It does not cover third-party sites you reach by following a link out of the app.</p>
+    </section>
+
+    <section id="collect">
+      <h2><span class="num">2</span> Information we collect</h2>
+      <p>We collect only what the app needs to run your account, show your progress, and process a purchase.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>What's included</th><th>When it's collected</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account &amp; profile</td>
+              <td>Mobile number, name, school, city, date of birth, education level (11th/12th)</td>
+              <td>When you sign up or edit your profile</td>
+            </tr>
+            <tr>
+              <td>Phone number detection</td>
+              <td>Your device's own number, read via Google Play services, to pre-fill the login screen</td>
+              <td>On first launch, only with the Android permission prompt you approve</td>
+            </tr>
+            <tr>
+              <td>Test &amp; usage activity</td>
+              <td>Papers and chapters attempted, scores, accuracy, time taken, questions solved, daily-goal streaks, leaderboard rank</td>
+              <td>Continuously, as you use the app</td>
+            </tr>
+            <tr>
+              <td>Payment records</td>
+              <td>Subscription plan, amount paid, payment method, order status — never your full card or UPI details, which go straight to our payment processor</td>
+              <td>When you buy a subscription</td>
+            </tr>
+            <tr>
+              <td>Referral &amp; coupon activity</td>
+              <td>Coupon codes applied and which referral partner they're linked to</td>
+              <td>If you apply a referral coupon at checkout</td>
+            </tr>
+            <tr>
+              <td>Support messages</td>
+              <td>Whatever you write to us, plus your email address</td>
+              <td>When you email cetverse@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do not access your contacts, camera, microphone, or location, and the app does not show third-party ads.</p>
+    </section>
+
+    <section id="use">
+      <h2><span class="num">3</span> How we use it</h2>
+      <ul>
+        <li>Run your account: sign you in, show your tests, and save your answers and scores.</li>
+        <li>Show your standing: compute your rank score, percentile against past-year papers, and your position on the leaderboard.</li>
+        <li>Process payments and keep a record of what plan you're on and when it was purchased.</li>
+        <li>Apply referral coupons and credit the right referral partner.</li>
+        <li>Respond when you contact us for support.</li>
+        <li>Diagnose crashes and fix bugs reported through Google Play.</li>
+      </ul>
+      <p>We do not use your data to build an advertising profile, and we do not sell it.</p>
+    </section>
+
+    <section id="share">
+      <h2><span class="num">4</span> Who we share it with</h2>
+      <p>We share data only with the services that keep CETverse running, each acting on our behalf:</p>
+      <div class="card">
+        <table class="data-table">
+          <tbody>
+            <tr><td style="width:40%"><strong>Google Firebase</strong></td><td>Stores your account, test history, and leaderboard entries, and hosts the app's backend functions.</td></tr>
+            <tr><td><strong>Razorpay</strong></td><td>Processes subscription payments. We receive confirmation of payment, not your card or bank details.</td></tr>
+            <tr><td><strong>2Factor.in</strong></td><td>Delivers the one-time password (OTP) SMS used to verify your mobile number at login.</td></tr>
+            <tr><td><strong>Google Play services</strong></td><td>Supplies the on-device phone-number hint used to pre-fill the login screen.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We may also disclose data if required by law, a court order, or a government request, or to protect the rights and safety of CETverse and its users.</p>
+    </section>
+
+    <section id="retention">
+      <h2><span class="num">5</span> How long we keep it</h2>
+      <p>We keep your account and test history for as long as your account is active, so your progress and leaderboard history stay intact across sessions. If you ask us to delete your account (see Section 6), we remove your profile, test history, and leaderboard entry; a referral partner's own payout records are kept, with your identifying details removed, since those belong to the partner's account rather than yours.</p>
+    </section>
+
+    <section id="rights">
+      <h2><span class="num">6</span> Your rights &amp; deleting your account</h2>
+      <p>You can ask us, at any time, to:</p>
+      <ul>
+        <li>See a copy of the personal data we hold about you.</li>
+        <li>Correct inaccurate profile details.</li>
+        <li>Delete your account and the personal data tied to it.</li>
+      </ul>
+      <p>To do any of these, email <strong>cetverse@gmail.com</strong> from the address or number linked to your account. We verify who you are before acting on the request, and we confirm by email once it's done. We aim to complete deletion requests within 30 days.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="num">7</span> Children's privacy</h2>
+      <p>CETverse is built for students preparing for MHT-CET, typically in 11th or 12th standard. The app is not directed at children under 13, and we do not knowingly collect personal data from a child under 13 without a parent or guardian's consent. If you believe a child has given us data without that consent, contact us and we'll delete it.</p>
+    </section>
+
+    <section id="security">
+      <h2><span class="num">8</span> Security</h2>
+      <p>All traffic between the app and our servers is encrypted in transit (HTTPS/TLS). Access to the underlying database is restricted to systems that operate the app. No method of transmission or storage is perfectly secure, and we can't guarantee absolute security, but we work to protect your data against unauthorised access, alteration, or loss.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="num">9</span> Changes to this policy</h2>
+      <p>If we make a material change to how we collect or use your data, we'll update the date at the top of this page and, where the change is significant, show a notice inside the app. Continuing to use CETverse after a change takes effect means you accept the updated policy.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">10</span> Contact us</h2>
+      <p>Questions about this policy, or a request under Section 6, go to:</p>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div>
+            <div class="label">Trade name</div>
+            <div class="value">Rushikesh Ramesh Gholve</div>
+          </div>
+          <div>
+            <div class="label">Operating as</div>
+            <div class="value">CETverse</div>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value">cetverse@gmail.com</div>
+          </div>
+          <div>
+            <div class="label">Location</div>
+            <div class="value">Maharashtra, India</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 CETverse. This policy is written in plain English for clarity; where it differs from the CETverse Terms of Service on any legal point, the Terms of Service govern.
+  </footer>
+</div>
